@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View } from "react-native";
 import fetchPokemons from "../../api/";
-import Card from "../card"
+import CardList from "../CardList";
 
 const Home = () =>{
 
@@ -23,12 +23,7 @@ const Home = () =>{
     return (
         <View>
             <Text>Pokedex con React Native y PokeAPi.</Text>
-            
-            <Text>
-            {pokemons.count && pokemons.results.map((pokemon)=>{
-                return <Card name={pokemon.name}/>;
-            })};
-            </Text>
+            <CardList pokemons={pokemons}/>
         </View>
     );
 };
